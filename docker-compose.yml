@@ -1,0 +1,32 @@
+  # version: '3'
+  # services:
+  #   todosDB:
+  #     image: postgres:15.3
+  #     container_name: todos-db
+  #     restart: always
+  #     ports:
+  #       - 5432:5432
+  #     environment:
+  #       - POSTGRES_USER=postgres
+  #       - POSTGRES_PASSWORD=postgres
+  #     volumes:
+  #       - ./postgres:/var/lib/postgresql/data
+
+version: "3.8"
+
+services:
+  todosDB:
+    image: postgres:15.3
+    container_name: todos-db
+    restart: always
+    ports:
+      - "5432:5432"  # Map external port 5432 to container port 5432
+    environment:
+      POSTGRES_DB: postgres  # Name of the database
+      POSTGRES_USER: postgres  # Username for database access
+      POSTGRES_PASSWORD: postgres  # Password for database user
+    volumes:
+      - ./postgres:/var/lib/postgresql/data # Persistent storage for database data
+
+
+

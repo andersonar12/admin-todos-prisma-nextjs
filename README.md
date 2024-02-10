@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#Development
 
-## Getting Started
+Pasos para levantar la app en desarrollo
 
-First, run the development server:
+\*Levantar la base de datos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Instalar la extensión Remote - Containers:
+
+Abre Visual Studio Code.
+Busca la extensión "Remote - Containers" en el Marketplace.
+Instala la extensión.
+
+2. Abrir la carpeta del proyecto:
+
+Abre la carpeta que contiene tu archivo docker-compose.yml en Visual Studio Code.
+
+3. Iniciar los contenedores:
+
+Haz clic derecho en el archivo docker-compose.yml.
+Selecciona la opción "Compose Up".
+
+4.  Ver los logs:
+
+Abre la vista "Terminal".
+Selecciona el panel "Docker".
+Podrás ver los logs de los contenedores en ejecución.
+
+Opciones adicionales:
+
+Puedes usar el comando docker-compose up desde la paleta de comandos de Visual Studio Code para iniciar los contenedores.
+Puedes usar el comando docker-compose down para detener los contenedores.
+Puedes usar el comando docker-compose ps para ver el estado de los contenedores.
+Puedes usar la extensión "Docker" para ver una vista gráfica de los contenedores en ejecución.
+
+#Prisma Commands
+
+1. Set the DATABASE_URL in the .env file to point to your existing database. If your database has no tables yet, read https://pris.ly/d/getting-started
+2. Set the provider of the datasource block in schema.prisma to match your database: postgresql, mysql, sqlite, sqlserver, mongodb or cockroachdb.
+3. Run npx prisma db pull to turn your database schema into a Prisma schema.
+4. Run npx prisma generate to generate the Prisma Client. You can then start querying your database.
+
+#Renombrar el .env.template a .env
+
+#Reemplazar las variables de entorno
+
+#Ejecutar el SEED para [crear la base de datos local](http://localhost:3000/api/seed)
+
+#Prisma Commands
+
 ```
+npx prisma init
+npx prisma migrate dev
+npx prisma generate
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
