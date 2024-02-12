@@ -17,7 +17,7 @@ const navItems = [
   },
   {
     title: "Server Actions",
-    href: "/dashboard/",
+    href: "/dashboard/server-todos",
     icon: <IoListOutline size={30} />,
   },
 ];
