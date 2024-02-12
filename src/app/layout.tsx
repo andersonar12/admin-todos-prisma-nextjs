@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " container"}>{children}</body>
+      <body className={inter.className + " bg-gray-300" /*  + " container" */}>{children}</body>
     </html>
   );
 }
