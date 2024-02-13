@@ -7,8 +7,8 @@ import { Todo } from "@prisma/client";
 import { NewTodo } from "../../todos/components/NewTodo";
 
 export const metadata = {
-  title: "Listado de todos",
-  description: "Listado de todos",
+  title: "Server Actions",
+  description: "Server Actions",
 };
 
 export default async function ServerTodosPage() {
