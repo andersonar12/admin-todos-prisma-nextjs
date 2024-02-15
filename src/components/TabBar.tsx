@@ -20,11 +20,7 @@ export default function TabBar({ tabBarItems = [1, 2, 3, 4], currentTab = 1 }: P
   };
 
   return (
-    <div
-      className={`grid w-full gap-2 rounded-xl bg-gray-200 p-2 mt-3 ${
-        "grid-cols-" + tabBarItems.length
-      } `}
-    >
+    <div className={`grid w-full gap-2 rounded-xl bg-gray-200 p-2 mt-3 ${"grid-cols-4"} `}>
       {tabBarItems.map((item) => (
         <div key={item}>
           <input
