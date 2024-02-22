@@ -45,6 +45,11 @@ Puedes usar la extensión "Docker" para ver una vista gráfica de los contenedor
 
 #Ejecutar el SEED para [crear la base de datos local](http://localhost:3000/api/seed)
 
+# Nota: usuario por defecto
+
+email: "test1@test.com"
+password: "123456"
+
 #Prisma Commands
 
 ```

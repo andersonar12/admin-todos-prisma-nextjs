@@ -5,6 +5,11 @@ import prisma from "@/lib/prisma";
 import TodosGrid from "../../todos/components/TodosGrid";
 import { Todo } from "@prisma/client";
 import { NewTodo } from "../../todos/components/NewTodo";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth";
+import { getUserServerSession } from "@/auth/actions/auth-actions";
+
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Server Actions",
@@ -12,7 +17,13 @@ export const metadata = {
 };
 
 export default async function ServerTodosPage() {
-  const todos = await prisma.todo.findMany({ orderBy: { description: "asc" } });
+  const user = await getUserServerSession();
+  if (!user) redirect("/api/auth/signin");
+
+  const todos = await prisma.todo.findMany({
+    where: { userId: "" },
+    orderBy: { description: "asc" },
+  });
 
   //   console.log(todos);
   return (

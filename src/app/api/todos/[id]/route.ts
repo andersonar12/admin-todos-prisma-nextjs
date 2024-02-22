@@ -1,8 +1,12 @@
+import { getUserServerSession } from "@/auth/actions/auth-actions";
 import prisma from "@/lib/prisma";
 import { NextResponse, NextRequest } from "next/server";
 import * as yup from "yup";
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
+  const user = await getUserServerSession();
+
+  if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const { id } = params;
 
   const todo = await prisma.todo.findFirst({
@@ -22,6 +26,9 @@ const updateChema = yup.object({
 });
 
 export async function PUT(request: Request, { params }: { params: { id: string } }) {
+  const user = await getUserServerSession();
+
+  if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   try {
     const { id } = params;
 

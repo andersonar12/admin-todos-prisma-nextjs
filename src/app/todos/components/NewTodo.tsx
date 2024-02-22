@@ -15,8 +15,9 @@ export const NewTodo = () => {
 
     if (!description) return;
 
-    // await createTodo(description);
-    await addTodo(description);
+    // await addTodo(description);
+    await createTodo(description);
+    router.refresh();
     setDescription("");
     // router.refresh();
   };

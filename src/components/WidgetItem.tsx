@@ -2,8 +2,8 @@ export default function WidgetItem({
   title,
   children,
 }: {
-  title: string;
-  children: React.ReactNode;
+  title?: string;
+  children?: React.ReactNode;
 }) {
   return (
     <div className="md:col-span-2 lg:col-span-1">
